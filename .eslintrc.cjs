@@ -25,6 +25,11 @@ const config = {
     ],
     "@typescript-eslint/no-unused-vars": ["warn", { argsIgnorePattern: "^_" }],
   },
+  settings: {
+    react: {
+      version: "17.0.62",
+    },
+  },
 };
 
 module.exports = config;
