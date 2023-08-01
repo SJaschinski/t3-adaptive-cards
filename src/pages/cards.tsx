@@ -3,12 +3,17 @@ import Head from "next/head";
 import cardTemplate from "../cards/template.json";
 import cardData from "../cards/template.data.json";
 import { type IEvaluationContext, Template } from "adaptivecards-templating";
+import { type SubmitAction } from "adaptivecards";
 
 const template = new Template(cardTemplate);
 const context: IEvaluationContext = {
   $root: cardData,
 };
 const card: unknown = template.expand(context);
+
+const submit = (action: SubmitAction) => {
+  console.log(action.data);
+};
 
 export default function Cards() {
   return (
@@ -23,8 +28,8 @@ export default function Cards() {
           <h1 className="text-5xl font-extrabold tracking-tight text-white sm:text-[5rem]">
             Microsoft Adaptive Cards
           </h1>
-          <div className="w-60 rounded-lg bg-white p-1">
-            <AdaptiveCard payload={card as object} />
+          <div className="w-[480px] rounded-lg bg-white p-1">
+            <AdaptiveCard payload={card as object} onActionSubmit={submit} />
           </div>
         </div>
       </main>

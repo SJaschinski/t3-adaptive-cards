@@ -11,6 +11,39 @@
       "value": 45
     },
     {
+      "type": "Container",
+      "items": [
+        {
+          "type": "TextBlock",
+          "text": "Betriebsanleitung",
+          "wrap": true,
+          "style": "heading"
+        },
+        {
+          "type": "Input.ChoiceSet",
+          "id": "betriebsanleitung",
+          "choices": [
+            {
+              "title": "Ja",
+              "value": "Ja"
+            },
+            {
+              "title": "Nein",
+              "value": "Nein"
+            },
+            {
+              "title": "n.v.h.",
+              "value": "nvh"
+            }
+          ],
+          "placeholder": "",
+          "style": "expanded",
+          "label": "Gut leserlich vorhanden",
+          "value": "nvh"
+        }
+      ]
+    },
+    {
       "type": "TextBlock",
       "text": "${name}, WA",
       "size": "large",
@@ -93,6 +126,10 @@
       "title": "Click me!",
       "text": "Hello World",
       "tooltip": "This is a tooltip"
+    },
+    {
+      "type": "Action.Submit",
+      "title": "Submit"
     }
   ]
 }
