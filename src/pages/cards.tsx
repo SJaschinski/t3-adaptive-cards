@@ -23,7 +23,7 @@ export default function Cards() {
           <h1 className="text-5xl font-extrabold tracking-tight text-white sm:text-[5rem]">
             Microsoft Adaptive Cards
           </h1>
-          <div className="w-60">
+          <div className="w-60 rounded-lg bg-white p-1">
             <AdaptiveCard payload={card as object} />
           </div>
         </div>
