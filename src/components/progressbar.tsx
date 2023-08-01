@@ -7,12 +7,6 @@ import {
 } from "adaptivecards";
 import ReactDOM from "react-dom";
 
-const progressBarElement = (
-  <div className="h-2 w-full bg-neutral-200">
-    <div className="h-full w-[45%] bg-blue-600"></div>
-  </div>
-);
-
 export class ProgressBar extends CardElement {
   static readonly JsonTypeName = "ProgressBar";
 
@@ -60,9 +54,17 @@ export class ProgressBar extends CardElement {
 
   //#endregion
 
+  reactRender() {
+    return (
+      <div className="h-2 w-full rounded-full bg-neutral-200">
+        <div className="h-full w-[45%] rounded-full bg-blue-600"></div>
+      </div>
+    );
+  }
+
   protected internalRender(): HTMLElement {
     const element = document.createElement("div");
-    ReactDOM.render(progressBarElement, element);
+    ReactDOM.render(this.reactRender(), element);
     return element;
   }
 

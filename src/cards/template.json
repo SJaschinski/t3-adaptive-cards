@@ -86,5 +86,13 @@
         }
       ]
     }
+  ],
+  "actions": [
+    {
+      "type": "Action.Alert",
+      "title": "Click me!",
+      "text": "Hello World",
+      "tooltip": "This is a tooltip"
+    }
   ]
 }
