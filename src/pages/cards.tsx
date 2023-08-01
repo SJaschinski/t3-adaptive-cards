@@ -23,7 +23,9 @@ export default function Cards() {
           <h1 className="text-5xl font-extrabold tracking-tight text-white sm:text-[5rem]">
             Microsoft Adaptive Cards
           </h1>
-          <AdaptiveCard hostConfig={{}} payload={card as object} />
+          <div className="w-60">
+            <AdaptiveCard payload={card as object} />
+          </div>
         </div>
       </main>
     </>
