@@ -5,6 +5,12 @@
   "speak": "<s>The forecast for Seattle ${formatEpoch(dt, 'MMMM d')} is mostly clear with a High of ${formatNumber((main.temp_max - 273) * 9 / 5 + 32, 0)} degrees and Low of ${formatNumber((main.temp_min - 273) * 9 / 5 + 32, 0)} degrees</s>",
   "body": [
     {
+      "id": "progress",
+      "type": "ProgressBar",
+      "title": "This is a progress bar",
+      "value": 45
+    },
+    {
       "type": "TextBlock",
       "text": "${name}, WA",
       "size": "large",
