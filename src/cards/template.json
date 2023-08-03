@@ -18,7 +18,8 @@
           "text": "Betriebsanleitung",
           "wrap": true,
           "style": "heading",
-          "level": "h2"
+          "level": "h2",
+          "separator": true
         },
         {
           "type": "Input.ChoiceSet",
@@ -52,7 +53,8 @@
           "text": "Holme und Sprossen bzw. Wangen und Stufen",
           "wrap": true,
           "style": "heading",
-          "level": "h2"
+          "level": "h2",
+          "separator": true
         },
         {
           "type": "Input.ChoiceSet",
@@ -103,14 +105,9 @@
   ],
   "actions": [
     {
-      "type": "Action.Alert",
-      "title": "Click me!",
-      "text": "Hello World",
-      "tooltip": "This is a tooltip"
-    },
-    {
       "type": "Action.Submit",
-      "title": "Submit"
+      "title": "Prüfprotokoll speichern",
+      "tooltip": "Prüfprotokoll der Leiter speichern"
     }
   ]
 }

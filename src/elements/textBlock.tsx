@@ -28,7 +28,14 @@ export class TextBlock extends TextBlockAC {
   }
 
   protected renderReact(): JSX.Element {
-    return <Text label={this.text} style={this.style} level={this.level} />;
+    return (
+      <Text
+        label={this.text}
+        style={this.style}
+        level={this.level}
+        separator={this.separator}
+      />
+    );
   }
 
   internalRender(): HTMLElement {
