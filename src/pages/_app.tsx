@@ -1,8 +1,8 @@
 import { GlobalRegistry } from "adaptivecards";
 import { type AppType } from "next/dist/shared/lib/utils";
-import { AlertAction } from "~/components/alertAction";
-import { ChoiceSetInput } from "~/components/choiceSetInput";
-import { ProgressBar } from "~/components/progressbar";
+import { AlertAction } from "~/elements/alertAction";
+import { ChoiceSetInput } from "~/elements/choiceSetInput";
+import { ProgressBar } from "~/elements/progressbar";
 import "~/styles/globals.css";
 
 GlobalRegistry.actions.register(AlertAction.JsonTypeName, AlertAction);
