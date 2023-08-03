@@ -27,13 +27,20 @@ export class ChoiceSetInput extends ChoiceSetInputAC {
     return ChoiceSetInput.JsonTypeName;
   }
 
-  onChange(e: ChangeEvent<HTMLInputElement>): void {
-    this._value = e.target.value;
+  onChange(value: string): void {
+    this._value = value;
     this.valueChanged();
   }
 
   protected renderReact(): JSX.Element {
-    return <ChoiceSet label={this.label} choices={this.choices} />;
+    return (
+      <ChoiceSet
+        label={this.label}
+        choices={this.choices}
+        value={this.value}
+        onChange={(v) => this.onChange(v)}
+      />
+    );
   }
 
   internalRender(): HTMLElement {

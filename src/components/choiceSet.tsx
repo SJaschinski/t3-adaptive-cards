@@ -1,4 +1,3 @@
-import { useState } from "react";
 import { RadioGroup } from "@headlessui/react";
 import { CheckCircleIcon } from "@heroicons/react/20/solid";
 import { classNames } from "./shared";
@@ -7,13 +6,13 @@ import { type Choice } from "adaptivecards";
 export interface ChoiceSetProps {
   label?: string;
   choices: Choice[];
+  value?: string;
+  onChange?: (value: string) => void;
 }
 
 export default function ChoiceSet(props: ChoiceSetProps) {
-  const [selectedValue, setSelectedValue] = useState<unknown>(undefined);
-
   return (
-    <RadioGroup value={selectedValue} onChange={setSelectedValue}>
+    <RadioGroup value={props.value} onChange={props.onChange}>
       {props.label && (
         <RadioGroup.Label className="text-base font-semibold leading-6 text-gray-900">
           {props.label}
