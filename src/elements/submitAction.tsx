@@ -1,9 +1,14 @@
-import { Action, StringProperty, Versions, property } from "adaptivecards";
+import {
+  StringProperty,
+  SubmitActionBase,
+  Versions,
+  property,
+} from "adaptivecards";
 import ReactDOM from "react-dom";
 import Button from "~/components/button";
 
-export class AlertAction extends Action {
-  static readonly JsonTypeName = "Action.Alert";
+export class SubmitAction extends SubmitActionBase {
+  static readonly JsonTypeName = "Action.Submit";
 
   //#region Schema
 
@@ -13,23 +18,19 @@ export class AlertAction extends Action {
     true
   );
 
-  @property(AlertAction.textProperty)
+  @property(SubmitAction.textProperty)
   text?: string;
 
   //#endregion
 
   getJsonTypeName(): string {
-    return AlertAction.JsonTypeName;
-  }
-
-  execute() {
-    alert(this.text);
+    return SubmitAction.JsonTypeName;
   }
 
   private onClick(e: React.MouseEvent<HTMLButtonElement, MouseEvent>) {
     if (this.isEnabled) {
       e.preventDefault();
-      this.execute();
+      super.execute();
     }
   }
 

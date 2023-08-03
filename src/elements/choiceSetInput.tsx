@@ -1,5 +1,4 @@
 import { ChoiceSetInput as ChoiceSetInputAC } from "adaptivecards";
-import { type ChangeEvent } from "react";
 import ChoiceSet from "~/components/choiceSet";
 import { sharedInternalRender } from "~/components/shared";
 
