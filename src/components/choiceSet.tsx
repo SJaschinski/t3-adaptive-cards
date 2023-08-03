@@ -38,13 +38,22 @@ export default function ChoiceSet(props: ChoiceSetProps) {
               {({ checked, active }) => (
                 <>
                   <span className="flex flex-1">
-                    <span className="flex flex-col">
-                      <RadioGroup.Label
-                        as="span"
-                        className="block text-sm font-medium text-gray-900"
-                      >
-                        {choice.title}
-                      </RadioGroup.Label>
+                    <span className="flex flex-1 flex-col">
+                      <span className="flex justify-between">
+                        <RadioGroup.Label
+                          as="span"
+                          className="block text-sm font-medium text-gray-900"
+                        >
+                          {choice.title}
+                        </RadioGroup.Label>
+                        <CheckCircleIcon
+                          className={classNames(
+                            !checked ? "invisible" : "",
+                            "h-5 w-5 text-einfra-600"
+                          )}
+                          aria-hidden="true"
+                        />
+                      </span>
                       <RadioGroup.Description
                         as="span"
                         className="mt-1 flex items-center text-sm text-gray-500"
@@ -53,13 +62,6 @@ export default function ChoiceSet(props: ChoiceSetProps) {
                       </RadioGroup.Description>
                     </span>
                   </span>
-                  <CheckCircleIcon
-                    className={classNames(
-                      !checked ? "invisible" : "",
-                      "h-5 w-5 text-einfra-600"
-                    )}
-                    aria-hidden="true"
-                  />
                   <span
                     className={classNames(
                       active ? "border" : "border-2",
