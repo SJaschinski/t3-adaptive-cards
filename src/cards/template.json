@@ -2,13 +2,13 @@
   "$schema": "http://adaptivecards.io/schemas/adaptive-card.json",
   "type": "AdaptiveCard",
   "version": "1.6",
-  "speak": "<s>The forecast for Seattle ${formatEpoch(dt, 'MMMM d')} is mostly clear with a High of ${formatNumber((main.temp_max - 273) * 9 / 5 + 32, 0)} degrees and Low of ${formatNumber((main.temp_min - 273) * 9 / 5 + 32, 0)} degrees</s>",
   "body": [
     {
       "type": "TextBlock",
       "text": "Prüfprotokoll",
       "wrap": true,
-      "style": "heading"
+      "style": "heading",
+      "level": "h1"
     },
     {
       "type": "Container",
@@ -17,7 +17,8 @@
           "type": "TextBlock",
           "text": "Betriebsanleitung",
           "wrap": true,
-          "style": "heading"
+          "style": "heading",
+          "level": "h2"
         },
         {
           "type": "Input.ChoiceSet",
@@ -39,6 +40,62 @@
           "placeholder": "",
           "style": "expanded",
           "label": "Gut leserlich vorhanden",
+          "value": "nvh"
+        }
+      ]
+    },
+    {
+      "type": "Container",
+      "items": [
+        {
+          "type": "TextBlock",
+          "text": "Holme und Sprossen bzw. Wangen und Stufen",
+          "wrap": true,
+          "style": "heading",
+          "level": "h2"
+        },
+        {
+          "type": "Input.ChoiceSet",
+          "id": "beschaedigungen",
+          "choices": [
+            {
+              "title": "Ja",
+              "value": "Ja"
+            },
+            {
+              "title": "Nein",
+              "value": "Nein"
+            },
+            {
+              "title": "n.v.h.",
+              "value": "nvh"
+            }
+          ],
+          "placeholder": "",
+          "style": "expanded",
+          "label": "Beschädigungen, Risse, Brüche, Abnutzungen",
+          "value": "nvh"
+        },
+        {
+          "type": "Input.ChoiceSet",
+          "id": "einbeulungen",
+          "choices": [
+            {
+              "title": "Ja",
+              "value": "Ja"
+            },
+            {
+              "title": "Nein",
+              "value": "Nein"
+            },
+            {
+              "title": "n.v.h.",
+              "value": "nvh"
+            }
+          ],
+          "placeholder": "",
+          "style": "expanded",
+          "label": "Einbeulungen, Knicke",
           "value": "nvh"
         }
       ]

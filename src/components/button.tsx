@@ -1,4 +1,4 @@
-import { ActionIconPlacement } from "adaptivecards";
+import { type ActionIconPlacement } from "adaptivecards";
 import { type MouseEventHandler } from "react";
 
 export interface ButtonProps {

@@ -42,7 +42,7 @@ export class ChoiceSetInput extends ChoiceSetInputAC {
     );
   }
 
-  internalRender(): HTMLElement {
+  render(): HTMLElement {
     const element = sharedInternalRender(() => this.renderReact());
     element.style.width = "100%";
     return element;
