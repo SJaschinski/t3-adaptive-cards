@@ -28,7 +28,7 @@ export default function ChoiceSet(props: ChoiceSetProps) {
               className={({ active }) =>
                 classNames(
                   active
-                    ? "border-indigo-600 ring-2 ring-indigo-600"
+                    ? "border-einfra-600 ring-2 ring-einfra-600"
                     : "border-gray-300",
                   "relative flex cursor-pointer rounded-lg border bg-white p-4 shadow-sm focus:outline-none"
                 )
@@ -55,14 +55,14 @@ export default function ChoiceSet(props: ChoiceSetProps) {
                   <CheckCircleIcon
                     className={classNames(
                       !checked ? "invisible" : "",
-                      "h-5 w-5 text-indigo-600"
+                      "h-5 w-5 text-einfra-600"
                     )}
                     aria-hidden="true"
                   />
                   <span
                     className={classNames(
                       active ? "border" : "border-2",
-                      checked ? "border-indigo-600" : "border-transparent",
+                      checked ? "border-einfra-600" : "border-transparent",
                       "pointer-events-none absolute -inset-px rounded-lg"
                     )}
                     aria-hidden="true"
