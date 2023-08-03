@@ -6,6 +6,7 @@ import { type Choice } from "adaptivecards";
 export interface ChoiceSetProps {
   label?: string;
   choices: Choice[];
+  descriptions?: string[];
   value?: string;
   onChange?: (value: string) => void;
 }
@@ -21,7 +22,7 @@ export default function ChoiceSet(props: ChoiceSetProps) {
         )}
 
         <div className="mt-2 grid grid-cols-1 gap-y-6 sm:grid-cols-3 sm:gap-x-4">
-          {props.choices.map((choice) => (
+          {props.choices.map((choice, i) => (
             <RadioGroup.Option
               key={choice.value}
               value={choice.value}
@@ -48,7 +49,7 @@ export default function ChoiceSet(props: ChoiceSetProps) {
                         as="span"
                         className="mt-1 flex items-center text-sm text-gray-500"
                       >
-                        Zusätzliche Informationen
+                        {props.descriptions?.[i]}
                       </RadioGroup.Description>
                     </span>
                   </span>

@@ -1,9 +1,27 @@
-import { ChoiceSetInput as ChoiceSetInputAC } from "adaptivecards";
+import {
+  ChoiceSetInput as ChoiceSetInputAC,
+  PropertyDefinition,
+  Versions,
+  property,
+} from "adaptivecards";
 import ChoiceSet from "~/components/choiceSet";
 import { sharedInternalRender } from "~/components/shared";
 
 export class ChoiceSetInput extends ChoiceSetInputAC {
   static readonly JsonTypeName = "Input.ChoiceSet";
+
+  //#region Schema
+
+  static readonly descriptionsProperty = new PropertyDefinition(
+    Versions.v1_0,
+    "descriptions",
+    []
+  );
+
+  @property(ChoiceSetInput.descriptionsProperty)
+  descriptions?: string[];
+
+  //#endregion
 
   private _value: string | undefined = undefined;
   public get value(): string | undefined {
@@ -36,6 +54,7 @@ export class ChoiceSetInput extends ChoiceSetInputAC {
       <ChoiceSet
         label={this.label}
         choices={this.choices}
+        descriptions={this.descriptions}
         value={this.value}
         onChange={(v) => this.onChange(v)}
       />

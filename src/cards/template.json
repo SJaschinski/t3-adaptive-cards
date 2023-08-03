@@ -38,7 +38,11 @@
               "value": "nvh"
             }
           ],
-          "placeholder": "",
+          "descriptions": [
+            "gut leserlich",
+            "nicht leserlich",
+            "nicht vorhanden"
+          ],
           "style": "expanded",
           "label": "Gut leserlich vorhanden",
           "value": "nvh"
@@ -73,7 +77,11 @@
               "value": "nvh"
             }
           ],
-          "placeholder": "",
+          "descriptions": [
+            "Beschädigungen vorhanden",
+            "keine Beschädigungen",
+            "nicht vorhanden"
+          ],
           "style": "expanded",
           "label": "Beschädigungen, Risse, Brüche, Abnutzungen",
           "value": "nvh"
@@ -95,7 +103,11 @@
               "value": "nvh"
             }
           ],
-          "placeholder": "",
+          "descriptions": [
+            "Einbeulungen vorhanden",
+            "keine Einbeulungen",
+            "nicht vorhanden"
+          ],
           "style": "expanded",
           "label": "Einbeulungen, Knicke",
           "value": "nvh"
