@@ -1,7 +1,9 @@
 import { RadioGroup } from "@headlessui/react";
 import { CheckCircleIcon } from "@heroicons/react/20/solid";
+import { ExclamationCircleIcon } from "@heroicons/react/24/outline";
 import { classNames } from "./shared";
 import { type Choice } from "adaptivecards";
+import { useState } from "react";
 
 export interface ChoiceSetProps {
   label?: string;
@@ -9,15 +11,26 @@ export interface ChoiceSetProps {
   descriptions?: string[];
   value?: string;
   onChange?: (value: string) => void;
+  isValid?: () => boolean;
 }
 
 export default function ChoiceSet(props: ChoiceSetProps) {
+  const [valid, setValid] = useState<boolean>(false);
+
+  const onChange = (value: string) => {
+    props.onChange && props.onChange(value);
+    setValid(props.isValid ? props.isValid() : true);
+  };
+
   return (
     <div className="pb-2">
-      <RadioGroup value={props.value} onChange={props.onChange}>
+      <RadioGroup value={props.value} onChange={onChange}>
         {props.label && (
-          <RadioGroup.Label className="text-base font-semibold leading-6 text-gray-900">
-            {props.label}
+          <RadioGroup.Label className="flex items-center space-x-2 text-base font-semibold leading-6 text-gray-900">
+            <span>{props.label}</span>
+            {!valid && (
+              <ExclamationCircleIcon className="inline-block h-5 w-5 text-red-600" />
+            )}
           </RadioGroup.Label>
         )}
 
