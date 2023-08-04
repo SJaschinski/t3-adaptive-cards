@@ -23,12 +23,12 @@ export default function Cards() {
         <meta name="description" content="Micrsoft Adaptive Cards" />
         <link rel="icon" href="/favicon.ico" />˚
       </Head>
-      <main className="flex min-h-screen flex-col items-center justify-center bg-gradient-to-b from-einfra-600 to-einfra-900">
+      <main className="flex min-h-screen flex-col items-center justify-center bg-gradient-to-b from-einfra-600 to-white">
         <div className="container flex flex-col items-center justify-center gap-12 px-4 py-16 ">
           <h1 className="text-5xl font-extrabold tracking-tight text-white sm:text-[5rem]">
-            Microsoft Adaptive Cards
+            Adaptive Cards
           </h1>
-          <div className="w-[480px] rounded-lg bg-white p-1">
+          <div className="rounded-lg bg-white p-1 sm:w-full lg:w-[480px]">
             <AdaptiveCard payload={card as object} onActionSubmit={submit} />
           </div>
         </div>

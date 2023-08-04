@@ -29,7 +29,10 @@ export default function ChoiceSet(props: ChoiceSetProps) {
           <RadioGroup.Label className="flex items-center space-x-2 text-base font-semibold leading-6 text-gray-900">
             <span>{props.label}</span>
             {!valid && (
-              <ExclamationCircleIcon className="inline-block h-5 w-5 text-red-600" />
+              <ExclamationCircleIcon
+                className="inline-block h-5 w-5 text-red-600"
+                title="Pflichtfeld"
+              />
             )}
           </RadioGroup.Label>
         )}
