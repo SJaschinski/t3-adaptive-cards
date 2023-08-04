@@ -44,8 +44,7 @@
             "nicht vorhanden"
           ],
           "style": "expanded",
-          "label": "Gut leserlich vorhanden",
-          "value": "nvh"
+          "label": "Gut leserlich vorhanden"
         }
       ]
     },
@@ -83,8 +82,7 @@
             "nicht vorhanden"
           ],
           "style": "expanded",
-          "label": "Beschädigungen, Risse, Brüche, Abnutzungen",
-          "value": "nvh"
+          "label": "Beschädigungen, Risse, Brüche, Abnutzungen"
         },
         {
           "type": "Input.ChoiceSet",
@@ -109,8 +107,7 @@
             "nicht vorhanden"
           ],
           "style": "expanded",
-          "label": "Einbeulungen, Knicke",
-          "value": "nvh"
+          "label": "Einbeulungen, Knicke"
         }
       ]
     }

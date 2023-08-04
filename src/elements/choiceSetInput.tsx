@@ -55,7 +55,7 @@ export class ChoiceSetInput extends ChoiceSetInputAC {
         label={this.label}
         choices={this.choices}
         descriptions={this.descriptions}
-        value={this.value}
+        defaultValue={this.defaultValue}
         onChange={(v) => this.onChange(v)}
         isValid={() => this.isValid()}
       />

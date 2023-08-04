@@ -9,22 +9,24 @@ export interface ChoiceSetProps {
   label?: string;
   choices: Choice[];
   descriptions?: string[];
-  value?: string;
+  defaultValue?: string;
   onChange?: (value: string) => void;
   isValid?: () => boolean;
 }
 
 export default function ChoiceSet(props: ChoiceSetProps) {
-  const [valid, setValid] = useState<boolean>(false);
+  const [value, setValue] = useState<string | undefined>(props.defaultValue);
+  const [valid, setValid] = useState<boolean>(!!props.defaultValue);
 
   const onChange = (value: string) => {
+    setValue(value);
     props.onChange && props.onChange(value);
     setValid(props.isValid ? props.isValid() : true);
   };
 
   return (
     <div className="pb-2">
-      <RadioGroup value={props.value} onChange={onChange}>
+      <RadioGroup value={value} onChange={onChange}>
         {props.label && (
           <RadioGroup.Label className="flex items-center space-x-2 text-base font-semibold leading-6 text-gray-900">
             <span>{props.label}</span>
