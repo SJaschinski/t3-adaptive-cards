@@ -3,7 +3,7 @@ import Head from "next/head";
 import cardTemplate from "../cards/template.json";
 import cardData from "../cards/template.data.json";
 import { type IEvaluationContext, Template } from "adaptivecards-templating";
-import { type SubmitAction } from "adaptivecards";
+import { type ExecuteAction, type SubmitAction } from "adaptivecards";
 
 const template = new Template(cardTemplate);
 const context: IEvaluationContext = {
@@ -13,6 +13,13 @@ const card: unknown = template.expand(context);
 
 const submit = (action: SubmitAction) => {
   console.log(action.data);
+};
+
+const execute = (action: ExecuteAction) => {
+  if (action.getJsonTypeName() === "Action.SharePoint") {
+    console.log(action.verb); // TODO: This is undefined although it is part of the template
+    console.log(action.data);
+  }
 };
 
 export default function Cards() {
@@ -29,7 +36,11 @@ export default function Cards() {
             Adaptive Cards
           </h1>
           <div className="rounded-lg bg-white p-1 sm:w-full lg:w-[480px]">
-            <AdaptiveCard payload={card as object} onActionSubmit={submit} />
+            <AdaptiveCard
+              payload={card as object}
+              onActionSubmit={submit}
+              onExecuteAction={execute}
+            />
           </div>
         </div>
       </main>

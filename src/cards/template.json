@@ -114,9 +114,20 @@
   ],
   "actions": [
     {
-      "type": "Action.Submit",
+      "type": "Action.SharePoint",
       "title": "Prüfprotokoll speichern",
-      "tooltip": "Prüfprotokoll der Leiter speichern"
+      "tooltip": "Prüfprotokoll der Leiter speichern",
+      "verb": "POST",
+      "data": {
+        "Title": "${$root.Title}",
+        "WerkzeugId": "${$root.Id}"
+      },
+      "baseUrl": "https://portal-api.e-infra.com/",
+      "contextSite": "/websites/dev",
+      "formDataSourceContextSite": "/websites/dev",
+      "formDataSourceListName": "Leitern_Verwaltung",
+      "formDataTargetContextSite": "/websites/dev",
+      "formDataTargetListName": "ladder_certification_form_data"
     }
   ]
 }
